@@ -10,6 +10,15 @@ const BASE_URL = "https://petdibs.herokuapp.com/pets/";
 // Option functions.
 const listPets = () => {
   // Fill out as part of Wave 1.
+  axios.get(BASE_URL)
+  .then((response) => {
+    setResult(response.data)
+    // Code that executes with a successful response goes here
+  })
+  .catch((error) => {
+    // Code that executes with an unsuccessful response goes here
+    setError("An error occurred.")
+  });
 }
 
 const showDetails = (selectedPet) => {
